@@ -15,34 +15,7 @@ import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
-def play_with_progress_bar(file_path):
-    """
-    Play audio with a progress bar.
-    """
-    try:
-        audio = AudioSegment.from_file(file_path)
-        duration_sec = audio.duration_seconds
-
-        # Function to play audio in a background thread
-        def play_audio():
-            play(audio)
-
-        # Start audio playback
-        print(f"Playing {file_path}...")
-        thread = Thread(target=play_audio)
-        thread.start()
-
-        # Show progress bar while audio plays
-        for _ in tqdm(range(int(duration_sec)), desc="Playing", unit="s"):
-            sleep(1)
-
-        thread.join()
-    except Exception as e:
-        print(f"Error playing {file_path}: {e}")
-
-
-
-def search_audio_by_text(query_text, k=3):
+def search_audio_by_text(query_text, k):
     """
     Search the FAISS audio index using a text query and display results.
 
@@ -95,7 +68,7 @@ if __name__ == "__main__":
     search_text = "a person whistling"
 
     # Retrieve top audio files
-    top_files = search_audio_by_text(search_text)
+    top_files = search_audio_by_text(search_text, 2)
 
     # Play the top files
     for file_path in top_files:
