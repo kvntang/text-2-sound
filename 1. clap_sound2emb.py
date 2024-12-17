@@ -27,7 +27,7 @@ if __name__ == "__main__":
     model = ClapModel.from_pretrained("laion/clap-htsat-fused", force_download=True)
 
     # Define audio files
-    audio_file_paths = ["audio1.m4a", "audio2.m4a", "audio3.m4a"]
+    audio_file_paths = ["hum.m4a", "meow.m4a", "whistle.m4a"]
 
     # Extract embeddings
     audio_embeddings = []
