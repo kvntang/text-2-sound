@@ -1,36 +1,3 @@
-# import requests
-
-# # Config
-# API_KEY = "sk_06a3db7d2cc74f9434402e981253414ca45e7262b10b8b8d"
-# ELEVENLABS_URL = "https://api.elevenlabs.io/v1/text-to-speech/standard"
-
-# # Request Data
-# text = "This is an example of ElevenLabs text-to-speech synthesis."
-
-# headers = {
-#     "xi-api-key": API_KEY,
-#     "Content-Type": "application/json"
-# }
-
-# payload = {
-#     "text": text,
-#     "voice_settings": {
-#         "stability": 0.75,
-#         "similarity_boost": 0.9
-#     }
-# }
-
-# # Make API Call
-# response = requests.post(ELEVENLABS_URL, headers=headers, json=payload)
-
-# # Save the Audio File
-# if response.status_code == 200:
-#     with open("output.wav", "wb") as f:
-#         f.write(response.content)
-#     print("Audio generated and saved as output.wav")
-# else:
-#     print(f"Failed! Status: {response.status_code}, Message: {response.text}")
-
 from elevenlabs import ElevenLabs
 import os
 from dotenv import load_dotenv
