@@ -6,19 +6,6 @@ model = whisper.load_model("base")
 # Transcribe audio file with word-level timestamps
 result = model.transcribe("narration2.mp3", word_timestamps=True)
 
-# Print the transcribed text
-# print("Transcription:", result["text"])
-
-# # Words to Timestamp
-# target_words = ["rain", "forest", "adventure"]
-
-# # Print timestamps for each word
-# print("\nTimestamps for Words:")
-# for segment in result["segments"]:
-#     for word in segment["words"]:
-#         print(f"{word['word']} | Start: {word['start']:.2f}s | End: {word['end']:.2f}s")
-
-
 # Words to Timestamp
 target_words = ["rain", "forest", "adventure"]
 
@@ -41,6 +28,6 @@ for segment in result["segments"]:
 
 # Print the dictionary
 print("\nTimestamps for Target Words:")
-print(timestamps)
-# for key, value in timestamps.items():
-#     print(f"{key}: {value}")
+# print(timestamps)
+for key, value in timestamps.items():
+    print(f"{key}: {value}")
