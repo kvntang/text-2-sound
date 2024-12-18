@@ -41,5 +41,6 @@ for segment in result["segments"]:
 
 # Print the dictionary
 print("\nTimestamps for Target Words:")
-for key, value in timestamps.items():
-    print(f"{key}: {value}")
+print(timestamps)
+# for key, value in timestamps.items():
+#     print(f"{key}: {value}")
