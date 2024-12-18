@@ -9,8 +9,6 @@ load_dotenv()
 # Retrieve API key from environment variable
 API_KEY = os.getenv("OPENAI_API_KEY")
 
-# Replace with your actual API key
-API_KEY = "your_openai_api_key"
 
 # Define the API endpoint
 API_URL = "https://api.openai.com/v1/chat/completions"
@@ -21,14 +19,20 @@ headers = {
     "Content-Type": "application/json"
 }
 
+target_words = ["rain", "forest", "adventure"]
+
+
 # Define the request payload
 payload = {
     "model": "gpt-3.5-turbo",  # Or "gpt-4" if available
     "messages": [
         {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "What is the capital of France?"}
+        {
+            "role": "user", 
+            "content": f"Give me a children's story based on these key words: {', '.join(target_words)}. Keep this to under a 100 words."
+        }
     ],
-    "max_tokens": 100
+    "max_tokens": 150
 }
 
 # Send the POST request
@@ -38,6 +42,6 @@ response = requests.post(API_URL, headers=headers, data=json.dumps(payload))
 if response.status_code == 200:
     result = response.json()
     message = result['choices'][0]['message']['content']
-    print("ChatGPT Response:", message)
+    print("ChatGPT Response: \n", message)
 else:
     print("Failed to get response:", response.status_code, response.text)
