@@ -32,10 +32,19 @@
 #     print(f"Failed! Status: {response.status_code}, Message: {response.text}")
 
 from elevenlabs import ElevenLabs
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Retrieve API key from environment variable
+API_KEY = os.getenv("ELEVENLABS_API_KEY")
 
 client = ElevenLabs(
-    api_key="sk_06a3db7d2cc74f9434402e981253414ca45e7262b10b8b8d",
+    api_key=API_KEY,
 )
+
 
 # Generate speech
 audio_generator = client.text_to_speech.convert(

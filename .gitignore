@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+
+# Virtual Environment
+venv/
+.env/
+
+# Logs
+*.log
+*.out
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# VSCode settings (if applicable)
+.vscode/
+
+# Environment files
+.env
+.env.*
+
+# Audio Files (optional)
+*.mp3
+*.wav
+*.m4a
+
+# FAISS and Torch files
+audio_index.faiss
+audio_metadata.pt
