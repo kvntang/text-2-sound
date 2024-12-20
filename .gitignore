@@ -27,6 +27,7 @@ Thumbs.db
 .env
 .env.*
 
+
 # Audio Files (optional)
 *.mp3
 *.wav
@@ -35,3 +36,7 @@ Thumbs.db
 # FAISS and Torch files
 audio_index.faiss
 audio_metadata.pt
+
+# Additional Folders to Exclude
+audio_files/
+sound_effects/
