@@ -11,7 +11,7 @@ if __name__ == "__main__":
     model = ClapModel.from_pretrained("laion/clap-htsat-fused")
 
     # Define audio folder path
-    audio_folder = "audio_files"
+    audio_folder = "2000sounds"
 
     # Load audio file paths dynamically
     audio_file_paths = [

@@ -29,14 +29,14 @@ Thumbs.db
 
 
 # Audio Files (optional)
-*.mp3
-*.wav
-*.m4a
+# *.mp3
+# *.wav
+# *.m4a
 
 # FAISS and Torch files
-audio_index.faiss
-audio_metadata.pt
+# audio_index.faiss
+# audio_metadata.pt
 
 # Additional Folders to Exclude
-audio_files/
-sound_effects/
+# audio_files/
+# sound_effects/
