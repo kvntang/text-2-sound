@@ -1,6 +1,9 @@
+Creating the right Environment
+
 python version: 3.10.16
 
-pip install torch transformers librosa
-
-conda install -c conda-forge faiss-gpu
-
+conda install numpy=1.24 -c conda-forge
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+conda install faiss-gpu -c conda-forge
+pip install transformers
+pip install librosa
